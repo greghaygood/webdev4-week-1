@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Web Dev 4 : Week 1 : AJAX Example </title>
+
+	<style type="text/css">
+		body { padding: 20px 50px; }
+		#data {
+			border: 1px solid gray;
+			min-height: 20px;
+			padding: 20px;
+		}
+	</style>
+
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript">
+		function get1() {
+			$.ajax({
+				url: 'sample1.html',
+				success:function(data){
+					$('#data').html(data);
+				}
+			});
+		}
+
+		function get2() {
+			$.ajax({
+				url: 'sample2.html',
+				success:function(data){
+					$('#data').html(data);
+				}
+			});
+		}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+<h2>AJAX example</h2>
+<form>
+<button id="get-1" onclick="get1(); return false;">Fetch Something</button>
+<button id="get-2" onclick="get2(); return false;">Fetch Something Else</button>
+</form>
+<div id="data"></div>
